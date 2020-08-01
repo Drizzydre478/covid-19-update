@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div>
+    <button (click)="onClick()">Home</button>
+    <h1>Countries Data</h1>
+    <div *ngIf="countries">
+        <table class="table table-success">
+            <tr>
+                <th class="header">Country</th>
+                <th class="header">Total Cases</th>
+                <th class="header">Total Serious Cases</th>
+                <th class="header">Total Recovered</th>
+                <th class="header">Total Deaths</th>
+                <th class="header">Total New Cases Today</th>
+                <th class="header">Total New Deaths Today</th>
+            </tr>
+            <tr *ngFor="let country of countries">
+                <td>{{country.title}}</td>
+                <td>{{country.total_cases}}</td>
+                <td>{{country.total_serious_cases}}</td>
+                <td>{{country.total_recovered}}</td>
+                <td>{{country.total_deaths}}</td>
+                <td>{{country.total_new_cases_today}}</td>
+                <td>{{country.total_new_deaths_today}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</html>
